@@ -211,9 +211,6 @@ $(function () {
 
             $("#menu").animate({ left: `-${width}px` }, 500);
 
-
-            //=================
-
             let h = $(".menu ul").innerHeight();
             $(".menu ul li").css("transform", `translateY(${h}px )`);
             $(".menu ul").animate({ transition: "all" }, 0.1, function () {
@@ -236,10 +233,6 @@ $(function () {
         }
         else {
 
-            //$(".menu ul li").animate({marginBottom: "20px"},2000);
-
-            // $(".menu ul ").css("transform" , "translateY(0px)");
-            // $(".menu ul").css("transition" , "all 1s "+(1)+"s ");
             let h = $(".menu ul").innerHeight();
 
             $(".menu ul li").css("transform", `translateY(${h}px)`);
@@ -258,25 +251,6 @@ $(function () {
 
             })
 
-
-
-
-            // $(".menu ul li").eq(0).animate({translateY:""},1000 , function(){
-
-
-            //     // $(".menu ul li").eq(1).animate({top:"0px"},1000 ,function(){
-
-
-            //     //     $(".menu ul li").eq(2).animate({top:"0px"},1000 , function(){
-
-
-            //     //     })
-
-            //     // } );
-            // });
-
-            // $(".menu ul li").eq(2).animate({padding:"30px"},3000);
-            // $(".menu ul li").eq(3).animate({padding:"30px"},3000);
 
             $(this).children().removeClass("fa-align-justify").addClass("fa-times");
 
@@ -384,8 +358,9 @@ $(function () {
     $(".srearchResults ul").on("click", "a", function (event) {
 
 
-        let id = $(this).find('p , img').parent().attr("data-mov");
+        let id = $(this).data('mov'); //.find('p , img').parent().attr("data-mov");
 
+       
         $('#movies').empty();
         $.ajax({
             type: "GET",
@@ -449,19 +424,21 @@ $(function () {
 
 });
 
+
 function getMoviesByWord(e) {
 
     let res = [];
     $.ajax({
         type: "GET",
-        url: "http://api.themoviedb.org/3/search/movie?api_key=eba8b9a7199efdcb0ca1f96879b83c44",
+        url: "http://api.themoviedb.org/3/search/movie?api_key=eba8b9a7199efdcb0ca1f96879b83c44&",
         data: { query: e },
         async: false,
         success: function (response) {
 
             res = response.results;
 
-        }
+        },
+       
     });
     return res;
 }
