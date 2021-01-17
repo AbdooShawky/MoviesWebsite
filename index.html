@@ -20,14 +20,14 @@
 
             <div class=" menu">
 
-               <ul class=" list-unstyled p-4 list-category">
-                
-                <li> <span  data-value="now_playing">Now playing</span> </li>
-                <li>  <span  data-value="popular">Popular</span>  </li>
-                <li> <span  data-value="top_rated">Top Rated</span> </li>
-                <li> <span  data-value="trending">Trending</span> </li>
-                <li><span  data-value="upcoming">Upcoming</span> </li>
-               </ul>
+                <ul class=" list-unstyled p-4 list-category">
+
+                    <li> <span data-value="now_playing">Now playing</span> </li>
+                    <li> <span data-value="popular">Popular</span> </li>
+                    <li> <span data-value="top_rated">Top Rated</span> </li>
+                    <li> <span data-value="trending">Trending</span> </li>
+                    <li><span data-value="upcoming">Upcoming</span> </li>
+                </ul>
             </div>
             <div class="social-icons mb-4 menu-bottom  text-white">
 
@@ -37,10 +37,10 @@
                     <li><a> <i class="fab fa-twitter"></i> </a></li>
                     <li><a> <i class="fas fa-globe"></i> </a></li>
                 </ul>
-               
-                    <p class="w-100 m-auto">Abdelrahman Shawky.</p>
 
-            
+                <p class="w-100 m-auto">Abdelrahman Shawky.</p>
+
+
             </div>
         </div>
         <div class="d-flex flex-column h-100 justify-content-md-between py-4 " id="secondMenu">
@@ -48,40 +48,46 @@
             <div class=" logo  ">
                 <img src="images/logo.png" alt="logo" class="w-100">
             </div>
-            
-    
-               
-                <div class="d-flex justify-content-center align-items-center  " id="sideToggle">
-                    <i class="fa fa-align-justify"></i>
+
+
+
+            <div class="d-flex justify-content-center align-items-center  " id="sideToggle">
+                <i class="fa fa-align-justify"></i>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center side-footer  w-100 " style="bottom:20px;">
+                <div class=" ">
+
+                    <i class="d-block fas fa-globe"></i>
+                    <i class="d-block fas fa-share-alt"></i>
                 </div>
-               
-                <div class="d-flex justify-content-center align-items-center side-footer  w-100 " style="bottom:20px;">
-                    <div class=" ">
-    
-                        <i class="d-block fas fa-globe"></i>
-                        <i class="d-block fas fa-share-alt"></i>
-                    </div>
-    
-                </div>
-            
+
+            </div>
+
         </div>
-       
+
     </div>
     <!-- End Side menu -->
 
-    <section class="secton overflow-hidden ">
+    <section class="secton  ">
 
         <div class="container  ">
 
-            <div class="row  ">
+            <div class="row">
 
                 <div class="col-md-6">
 
-                    <input type="text" class="text-search form-control " placeholder="Search in this category" id="searchCategory">
+                    <input type="text" class="text-search form-control " placeholder="Search in this category"
+                        id="searchCategory">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6  position-relative">
 
                     <input type="text" class="text-search form-control " placeholder="Search a movie" id="searchMovie">
+                    <div class="  srearchResults position-absolute" id="srearchResults">
+                        <ul class="list-unstyled">
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,8 +104,9 @@
         </div>
     </section>
     <!-- End movie section -->
-    
 
+
+    
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
