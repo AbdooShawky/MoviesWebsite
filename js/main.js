@@ -141,7 +141,7 @@ $(function () {
             
                          <div class="text-center px-3">   
                          
-                         <h3>${valueOfElement.title}</h3>
+                         <h3>${valueOfElement.title || valueOfElement.name}</h3>
                          <p>${valueOfElement.overview}</p>
                          
                          </div>
