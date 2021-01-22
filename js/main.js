@@ -195,6 +195,7 @@ $(function () {
     });
 
 
+    // animate menu when click
     $("#sideToggle").click(function () {
 
 
@@ -202,7 +203,7 @@ $(function () {
         let left = $("#menu").css("left");
         if (left == "0px") {
 
-            // menu  
+            // menu closed 
 
 
             $(this).children().removeClass("fa-times").addClass("fa-align-justify");
@@ -232,6 +233,7 @@ $(function () {
 
         }
         else {
+            // menu opened
 
             let h = $(".menu ul").innerHeight();
 
@@ -265,7 +267,7 @@ $(function () {
 
 
 
-    // search 
+    // real time search 
 
     $("#searchCategory").keyup(function (e) {
         let input = $(this).val();
@@ -315,9 +317,11 @@ $(function () {
 
     $(".srearchResults").css("visibility", `hidden`);
 
+    // search by movie name
     $("#searchMovie").on("keyup", function (e) {
 
         let input = $(this).val();
+        // calling api to get movies that contains the name in search textbox
         let res = getMoviesByWord(input);
         let cartona = ``;
 
@@ -329,6 +333,7 @@ $(function () {
         else {
 
 
+            // looping on the results that came from api
             for (let i = 0; i < res.length; i++) {
 
 
@@ -347,6 +352,7 @@ $(function () {
             }
 
             $("#srearchResults ul").append(cartona);
+            // size of container that populates the api results 
             let liHeight = $(".srearchResults ul li").innerHeight() * 5;
             $(".srearchResults ul").css("height", `${liHeight}px`);
             $(".srearchResults").css("visibility", `visible`);
@@ -355,10 +361,11 @@ $(function () {
     });
 
 
+
     $(".srearchResults ul").on("click", "a", function (event) {
 
 
-        let id = $(this).data('mov'); //.find('p , img').parent().attr("data-mov");
+        let id = $(this).data('mov');
 
        
         $('#movies').empty();
