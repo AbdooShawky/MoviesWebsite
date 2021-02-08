@@ -116,7 +116,7 @@ $(function () {
             $("#movies").empty();
             $.ajax({
                 type: "GET",
-                url: "https://api.themoviedb.org/3/trending/all/day?api_key=eba8b9a7199efdcb0ca1f96879b83c44",
+                url: "https://api.themoviedb.org/3/trending/movie/day?api_key=eba8b9a7199efdcb0ca1f96879b83c44",
                 data: "",
                 async: false,
                 success: function (response) {
@@ -195,7 +195,7 @@ $(function () {
     });
 
 
-    // animate menu when click
+    // animate menu when clicked
     $("#sideToggle").click(function () {
 
 
@@ -273,7 +273,7 @@ $(function () {
         let input = $(this).val();
         let cartona = ``;
         $('#movies').empty();
-        console.log(searchArray);
+        // console.log(searchArray);
         for (const iterator of searchArray) {
 
             if (iterator.title.toLowerCase().includes(input.toLowerCase())) {
@@ -352,7 +352,7 @@ $(function () {
             }
 
             $("#srearchResults ul").append(cartona);
-            // size of container that populates the api results 
+            // size of ul that api to be displayed in it   
             let liHeight = $(".srearchResults ul li").innerHeight() * 5;
             $(".srearchResults ul").css("height", `${liHeight}px`);
             $(".srearchResults").css("visibility", `visible`);
